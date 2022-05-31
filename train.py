@@ -198,6 +198,10 @@ Run on multiple machines:
     parser.add_argument('--start_epoch', default=0, type=int, metavar='N',
                         help='start epoch')
 
+    # Model parameters
+    parser.add_argument('--frozen_weights', type=str, default=None,
+                        help="Path to the pretrained model. If set, only the mask head will be trained")
+    
     # Distributed training parameters
     parser.add_argument('--resume', default='', help='resume from checkpoint')
     parser.add_argument('--num-machines', type=int, default=1, help='total number of machines')
