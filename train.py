@@ -201,6 +201,7 @@ Run on multiple machines:
     # Model parameters
     parser.add_argument('--frozen_weights', type=str, default=None,
                         help="Path to the pretrained model. If set, only the mask head will be trained")
+    parser.add_argument('--seed', default=42, type=int)
     
     # Distributed training parameters
     parser.add_argument('--resume', default='', help='resume from checkpoint')
