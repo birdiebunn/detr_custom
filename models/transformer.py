@@ -9,16 +9,16 @@ import copy
 class Transformer(nn.Module):
     def __init__(self, d_model=512, num_head=8, num_encoder_layers=6,
                 num_decoder_layers=6, dim_feed_forward=2048, dropout=0.1,
-                activation='relu', norm_before=False,
+                activation='relu', normalize_before=False,
                 return_intermediate_dec=False):
         super().__init__()
 
         encoder_layer = TransformerEncoderLayer(d_model, num_head, dim_feed_forward,
-                                                dropout, activation, norm_before)
+                                                dropout, activation, normalize_before)
         encoder_norm = nn.LayerNorm(d_model) if norm_before else None
         self.encoder = TransformerEncoder(encoder_layer, num_encoder_layers, encoder_norm)
         decoder_layer = TransformerDecoderLayer(d_model, num_head, dim_feed_forward,
-                                                dropout, activation, norm_before)
+                                                dropout, activation, normalize_before)
         decoder_norm = nn.LayerNorm(d_model)
         self.decoder = TransformerDecoder(decoder_layer, num_decoder_layers, decoder_norm,
                                         return_intermediate=return_intermediate_dec)
