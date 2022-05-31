@@ -3,7 +3,7 @@ from torch import nn
 import torchvision
 import torch.nn.functional as F
 from torchvision.models._utils import IntermediateLayerGetter
-from position_encoding import build_position_encoding
+from .position_encoding import build_position_encoding
 from utils.misc import NestedTensor, is_main_process
 from typing import Dict, List
 
