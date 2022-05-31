@@ -193,6 +193,7 @@ Run on multiple machines:
     parser.add_argument('--dataset_file', default='coco')
     parser.add_argument('--output_dir', default='',
                         help='path where to save, empty for no saving')
+    parser.add_argument('--coco_path', type=str)
     parser.add_argument('--eval', action='store_true')
     parser.add_argument('--start_epoch', default=0, type=int, metavar='N',
                         help='start epoch')
