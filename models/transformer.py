@@ -15,7 +15,7 @@ class Transformer(nn.Module):
 
         encoder_layer = TransformerEncoderLayer(d_model, num_head, dim_feed_forward,
                                                 dropout, activation, normalize_before)
-        encoder_norm = nn.LayerNorm(d_model) if norm_before else None
+        encoder_norm = nn.LayerNorm(d_model) if normalize_before else None
         self.encoder = TransformerEncoder(encoder_layer, num_encoder_layers, encoder_norm)
         decoder_layer = TransformerDecoderLayer(d_model, num_head, dim_feed_forward,
                                                 dropout, activation, normalize_before)
