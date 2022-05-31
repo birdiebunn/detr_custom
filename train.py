@@ -185,6 +185,8 @@ Run on multiple machines:
     # Transformer
     parser.add_argument('--hidden_dim', default=256, type=int,
                         help="Size of the embeddings (dimension of the transformer)")
+    parser.add_argument('--dropout', default=0.1, type=float,
+                        help="Dropout applied in the transformer")
     
     # Loss coefficients
     parser.add_argument('--mask_loss_coef', default=1, type=float)
