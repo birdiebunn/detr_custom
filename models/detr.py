@@ -9,8 +9,8 @@ from utils.misc import (
     NestedTensor,
     nested_tensor_from_tensor_list
 )
-from detr_segm import DETRsegm
-from matcher import build_matcher
+from .detr_segm import DETRsegm
+from .matcher import build_matcher
 
 class DETR(nn.Module):
     def __init__(self, backbone, transformer, num_classes, num_queries, aux_loss=False):
