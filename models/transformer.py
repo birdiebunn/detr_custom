@@ -45,7 +45,7 @@ class Transformer(nn.Module):
         return hs.transpose(1,2), memory.permute(1, 2, 0).view(bs, c, h, w)
 
 class TransformerEncoder(nn.Module):
-    def __init(self, encoder_layer, num_layers, norm=None):
+    def __init__(self, encoder_layer, num_layers, norm=None):
         super().__init__()
         self.layers = get_clones(encoder_layer, num_layers)
         self.num_layers = num_layers
