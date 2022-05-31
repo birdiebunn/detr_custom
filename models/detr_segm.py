@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 from torch.nn import Conv2d, GroupNorm
 from torch import Tensor
-from typing import List
+from typing import List, Optional
 
 from utils.misc import NestedTensor, nested_tensor_from_tensor_list
 
