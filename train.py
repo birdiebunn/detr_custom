@@ -175,6 +175,8 @@ Run on multiple machines:
                         help="Train segmentation head if the flag is provided")
     
     # Backbone
+    parser.add_argument('--backbone', default='resnet50', type=str,
+                        help="Name of the convolutional backbone to use")
     parser.add_argument('--position_embedding', default='sine', type=str, choices=('sine', 'learned'),
                         help="Type of positional embedding to use on top of the image features")
     
