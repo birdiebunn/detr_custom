@@ -84,7 +84,7 @@ class TransformerEncoderLayer(nn.Module):
         self.norm_before = norm_before
 
 
-    def with_pos_embed(self, tensor, pos: Optional(Tensor)):
+    def with_pos_embed(self, tensor, pos: Optional[Tensor]):
         return tensor if pos is None else tensor + pos
 
     def forward_pre(self, src,
@@ -109,7 +109,7 @@ class TransformerEncoderLayer(nn.Module):
         return src                    
 
     def forward_post(self, src, src_mask: Optional[Tensor] = None,
-                    src_key_padding_mask: Optional[Tensor]  = Noen,
+                    src_key_padding_mask: Optional[Tensor]  = None,
                     pos: Optional[Tensor] = None):
         q = k = self.with_pos_embed(src, pos)
         src2 = self.self_attn(q, k, 
