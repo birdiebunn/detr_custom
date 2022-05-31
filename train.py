@@ -187,6 +187,8 @@ Run on multiple machines:
                         help="Size of the embeddings (dimension of the transformer)")
     parser.add_argument('--dropout', default=0.1, type=float,
                         help="Dropout applied in the transformer")
+    parser.add_argument('--num_head', default=8, type=int,
+                        help="Number of attention heads inside the transformer's attentions")
     
     # Loss coefficients
     parser.add_argument('--mask_loss_coef', default=1, type=float)
