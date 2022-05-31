@@ -77,8 +77,8 @@ class TransformerEncoderLayer(nn.Module):
 
         self.norm1 = nn.LayerNorm(d_model)
         self.norm2 = nn.LayerNorm(d_model)
-        self.dropout1 = nn.Droupout(dropout)
-        self.dropout2 = nn.Droupout(dropout)
+        self.dropout1 = nn.Dropout(dropout)
+        self.dropout2 = nn.Dropout(dropout)
 
         self.activation = get_activation_fn(activation)
         self.norm_before = norm_before
